@@ -1,0 +1,22 @@
+---
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-14.04
+
+#driver:
+#  name: vagrant
+
+driver:
+  name: rackspace
+  rackspace_region: IAD
+  server_name: rackspace-ubuntu1404
+  image_id: bb02b1a3-bc77-4d17-ab5b-421d89850fca
+  flavor_id: performance1-1
+  require_chef_omnibus: latest
+
+suites:
+  - name: default
+    run_list: recipe[minecraft::default]
+    attributes:
