@@ -8,7 +8,7 @@ name              'minecraft'
 
 recipe 'minecraft', 'Installs and configures minecraft server.'
 
-%w(java runit ohai apt yum).each do |dep|
+%w(java runit ohai yum).each do |dep|
   depends dep
 end
 
